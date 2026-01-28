@@ -8,6 +8,7 @@ import type {
   TuningPhase,
   Question,
 } from '@/types';
+import { saveSession } from '@/lib/sessions';
 
 interface TuningState {
   // Current session
@@ -27,7 +28,7 @@ interface TuningState {
   answerQuestion: (questionId: string, optionId: string) => void;
   nextQuestion: () => void;
   previousQuestion: () => void;
-  completeSession: (results: TuningResults) => void;
+  completeSession: (results: TuningResults, userId?: string) => void;
   resetSession: () => void;
 
   // Get current answer for a question (for showing selected state)
@@ -121,12 +122,13 @@ export const useTuningStore = create<TuningState>()(
         }
       },
 
-      completeSession: (results) => {
+      completeSession: (results, userId) => {
         const session = get().currentSession;
         if (!session) return;
 
         const completedSession: TuningSession = {
           ...session,
+          userId,
           results,
           completed: true,
         };
@@ -136,8 +138,15 @@ export const useTuningStore = create<TuningState>()(
           phase: 'results',
         });
 
-        // Add to history
+        // Add to local history
         get().addToHistory(completedSession);
+
+        // Save to Supabase if user is logged in
+        if (userId) {
+          saveSession(completedSession, userId).catch((err) => {
+            console.error('Failed to save session to Supabase:', err);
+          });
+        }
       },
 
       resetSession: () => {

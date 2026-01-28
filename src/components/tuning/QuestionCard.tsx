@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTuningStore, selectIsLastQuestion, selectIsFirstQuestion } from '@/stores/tuningStore';
+import { useAuthStore } from '@/stores/authStore';
 import type { Question, Note } from '@/types';
 import { useRouter } from 'next/navigation';
 import { getNoteInvitation } from '@/lib/questions';
@@ -58,6 +59,7 @@ export function QuestionCard({ question }: QuestionCardProps) {
 
   const isLast = useTuningStore(selectIsLastQuestion);
   const isFirst = useTuningStore(selectIsFirstQuestion);
+  const user = useAuthStore((state) => state.user);
 
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
   const [isExiting, setIsExiting] = useState(false);
@@ -88,7 +90,7 @@ export function QuestionCard({ question }: QuestionCardProps) {
       if (isLast) {
         // Calculate results and complete session
         const results = calculateResults();
-        completeSession(results);
+        completeSession(results, user?.id);
         router.push('/results');
       } else {
         nextQuestion();
