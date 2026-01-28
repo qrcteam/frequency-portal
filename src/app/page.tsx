@@ -616,6 +616,13 @@ export default function Home() {
                 Frequency Activator
               </Link>
               <span className="text-text-muted/30">|</span>
+              <Link
+                href="/merkaba"
+                className="font-ui text-sm text-text-muted hover:text-text-secondary transition-colors"
+              >
+                Merkaba
+              </Link>
+              <span className="text-text-muted/30">|</span>
               <a
                 href="https://quantumrealitycreators.com"
                 target="_blank"
