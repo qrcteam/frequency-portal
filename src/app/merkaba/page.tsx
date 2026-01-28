@@ -421,20 +421,28 @@ export default function MerkabaPage() {
             {/* Center Labels - Split View */}
             {triadMode === 'split' && (
               <>
-                {/* Masculine Label */}
+                {/* Masculine Label - centered in up-pointing triangle */}
                 <div
-                  className="absolute top-1/2 -translate-y-1/2 text-center z-10 transition-all duration-700"
-                  style={{ left: `${50 - 38}%`, transform: 'translate(-50%, -50%)' }}
+                  className="absolute text-center z-10 transition-all duration-700"
+                  style={{
+                    left: `${50 - 38}%`,
+                    top: '54%',
+                    transform: 'translate(-50%, -50%)'
+                  }}
                 >
                   <div className="font-display text-xl sm:text-2xl text-heat-high tracking-widest uppercase">
                     Masculine
                   </div>
                 </div>
 
-                {/* Feminine Label */}
+                {/* Feminine Label - centered in down-pointing triangle */}
                 <div
-                  className="absolute top-1/2 -translate-y-1/2 text-center z-10 transition-all duration-700"
-                  style={{ left: `${50 + 38}%`, transform: 'translate(-50%, -50%)' }}
+                  className="absolute text-center z-10 transition-all duration-700"
+                  style={{
+                    left: `${50 + 38}%`,
+                    top: '46%',
+                    transform: 'translate(-50%, -50%)'
+                  }}
                 >
                   <div className="font-display text-xl sm:text-2xl text-safety-high tracking-widest uppercase">
                     Feminine
