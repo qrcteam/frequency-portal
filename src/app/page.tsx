@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { NOTES, DOMAINS } from "@/types";
+import { UserMenu } from "@/components/auth";
 
 export default function Home() {
   return (
@@ -13,12 +14,15 @@ export default function Home() {
           <Link href="/" className="font-display text-xl text-text-primary">
             Frequency Activator
           </Link>
-          <Link
-            href="/tune"
-            className="font-ui text-sm text-text-secondary hover:text-text-primary transition-colors"
-          >
-            Begin Activation &rarr;
-          </Link>
+          <div className="flex items-center gap-6">
+            <UserMenu />
+            <Link
+              href="/tune"
+              className="font-ui text-sm text-text-secondary hover:text-text-primary transition-colors"
+            >
+              Begin Activation &rarr;
+            </Link>
+          </div>
         </div>
       </nav>
 
