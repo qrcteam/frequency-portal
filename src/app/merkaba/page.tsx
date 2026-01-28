@@ -189,7 +189,7 @@ export default function MerkabaPage() {
           {/* Header */}
           <header className="text-center mb-8">
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-light tracking-wider mb-3">
-              <span className="bg-gradient-to-r from-now-high to-pleasure-high bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-heat-high to-safety-high bg-clip-text text-transparent">
                 MERKABA
               </span>
             </h1>
@@ -252,8 +252,8 @@ export default function MerkabaPage() {
               onClick={() => setTriadMode('masculine')}
               className={`px-4 py-2 rounded-full border text-xs font-ui uppercase tracking-wider transition-all ${
                 triadMode === 'masculine'
-                  ? 'bg-now-mid/30 border-now-mid/50 text-now-high'
-                  : 'bg-transparent border-white/10 text-text-muted hover:border-now-mid/30'
+                  ? 'bg-heat-mid/30 border-heat-mid/50 text-heat-high'
+                  : 'bg-transparent border-white/10 text-text-muted hover:border-heat-mid/30'
               }`}
             >
               Masculine
@@ -262,8 +262,8 @@ export default function MerkabaPage() {
               onClick={() => setTriadMode('feminine')}
               className={`px-4 py-2 rounded-full border text-xs font-ui uppercase tracking-wider transition-all ${
                 triadMode === 'feminine'
-                  ? 'bg-pleasure-mid/30 border-pleasure-mid/50 text-pleasure-high'
-                  : 'bg-transparent border-white/10 text-text-muted hover:border-pleasure-mid/30'
+                  ? 'bg-safety-mid/30 border-safety-mid/50 text-safety-high'
+                  : 'bg-transparent border-white/10 text-text-muted hover:border-safety-mid/30'
               }`}
             >
               Feminine
@@ -275,14 +275,14 @@ export default function MerkabaPage() {
             <button
               onClick={rotateMasculine}
               disabled={triadMode === 'feminine'}
-              className="px-4 py-2 rounded-full border border-now-mid/30 text-now-high text-xs font-ui uppercase tracking-wider transition-all hover:bg-now-mid/20 disabled:opacity-30 disabled:cursor-not-allowed"
+              className="px-4 py-2 rounded-full border border-heat-mid/30 text-heat-high text-xs font-ui uppercase tracking-wider transition-all hover:bg-heat-mid/20 disabled:opacity-30 disabled:cursor-not-allowed"
             >
               Rotate Masculine
             </button>
             <button
               onClick={rotateFeminine}
               disabled={triadMode === 'masculine'}
-              className="px-4 py-2 rounded-full border border-pleasure-mid/30 text-pleasure-high text-xs font-ui uppercase tracking-wider transition-all hover:bg-pleasure-mid/20 disabled:opacity-30 disabled:cursor-not-allowed"
+              className="px-4 py-2 rounded-full border border-safety-mid/30 text-safety-high text-xs font-ui uppercase tracking-wider transition-all hover:bg-safety-mid/20 disabled:opacity-30 disabled:cursor-not-allowed"
             >
               Rotate Feminine
             </button>
@@ -303,7 +303,7 @@ export default function MerkabaPage() {
               </span>
             </div>
 
-            {/* Masculine Triangle (Up - Blue/Teal) */}
+            {/* Masculine Triangle (Up - Green/Heat) */}
             <svg
               className="absolute top-1/2 left-1/2 w-[60%] h-[60%] overflow-visible transition-all duration-700 ease-out"
               style={{
@@ -314,13 +314,13 @@ export default function MerkabaPage() {
             >
               <polygon
                 points="0,-50 43.3,25 -43.3,25"
-                fill="rgba(59, 130, 246, 0.15)"
-                stroke="rgb(59, 130, 246)"
+                fill="rgba(74, 222, 128, 0.15)"
+                stroke="rgb(74, 222, 128)"
                 strokeWidth="2"
               />
             </svg>
 
-            {/* Feminine Triangle (Down - Pink) */}
+            {/* Feminine Triangle (Down - Purple/Safety) */}
             <svg
               className="absolute top-1/2 left-1/2 w-[60%] h-[60%] overflow-visible transition-all duration-700 ease-out"
               style={{
@@ -331,8 +331,8 @@ export default function MerkabaPage() {
             >
               <polygon
                 points="0,50 -43.3,-25 43.3,-25"
-                fill="rgba(236, 72, 153, 0.15)"
-                stroke="rgb(236, 72, 153)"
+                fill="rgba(167, 139, 250, 0.15)"
+                stroke="rgb(167, 139, 250)"
                 strokeWidth="2"
               />
             </svg>
@@ -356,7 +356,7 @@ export default function MerkabaPage() {
                     opacity: getMasculineOpacity(),
                   }}
                 >
-                  <div className="font-display text-lg sm:text-2xl text-now-high tracking-wider">
+                  <div className="font-display text-lg sm:text-2xl text-heat-high tracking-wider">
                     {theme === 'presence' ? point.presence : point.absence}
                   </div>
                   <div className="font-body text-xs text-text-muted italic">
@@ -385,7 +385,7 @@ export default function MerkabaPage() {
                     opacity: getFeminineOpacity(),
                   }}
                 >
-                  <div className="font-display text-lg sm:text-2xl text-pleasure-high tracking-wider">
+                  <div className="font-display text-lg sm:text-2xl text-safety-high tracking-wider">
                     {theme === 'presence' ? point.presence : point.absence}
                   </div>
                   <div className="font-body text-xs text-text-muted italic">
@@ -405,10 +405,10 @@ export default function MerkabaPage() {
                   {theme === 'presence' ? 'Intention · Perception' : 'Hallucinating'}
                 </div>
                 <div className="font-display text-2xl sm:text-3xl tracking-widest">
-                  <span className="text-now-high">
+                  <span className="text-heat-high">
                     {theme === 'presence' ? 'AWA' : 'ASL'}
                   </span>
-                  <span className="text-pleasure-high">
+                  <span className="text-safety-high">
                     {theme === 'presence' ? 'KE' : 'EEP'}
                   </span>
                 </div>
@@ -424,22 +424,22 @@ export default function MerkabaPage() {
             <p className="font-body text-text-secondary leading-relaxed">
               {triadMode === 'masculine' && (
                 <>
-                  The <span className="text-now-high">Masculine Triad</span> represents the active, directing forces:
+                  The <span className="text-heat-high">Masculine Triad</span> represents the active, directing forces:
                   NOW (presence), LIGHT (clarity), and HEAT (transformation).
                   These frequencies illuminate, activate, and propel forward.
                 </>
               )}
               {triadMode === 'feminine' && (
                 <>
-                  The <span className="text-pleasure-high">Feminine Triad</span> represents the receptive, nurturing forces:
+                  The <span className="text-safety-high">Feminine Triad</span> represents the receptive, nurturing forces:
                   SAFETY (foundation), PLEASURE (flow), and POWER (capacity).
                   These frequencies ground, receive, and empower.
                 </>
               )}
               {triadMode === 'unified' && (
                 <>
-                  When the <span className="text-now-high">Masculine</span> and{' '}
-                  <span className="text-pleasure-high">Feminine</span> triads unite, they form the Merkaba—
+                  When the <span className="text-heat-high">Masculine</span> and{' '}
+                  <span className="text-safety-high">Feminine</span> triads unite, they form the Merkaba—
                   the vehicle of light that carries consciousness. In balance, all six frequencies
                   harmonize to create wholeness.
                 </>
@@ -447,8 +447,8 @@ export default function MerkabaPage() {
               {triadMode === 'split' && (
                 <>
                   Separated, we can see how the two triads complement each other.
-                  The <span className="text-now-high">Masculine</span> reaches upward toward consciousness,
-                  while the <span className="text-pleasure-high">Feminine</span> grounds downward into embodiment.
+                  The <span className="text-heat-high">Masculine</span> reaches upward toward consciousness,
+                  while the <span className="text-safety-high">Feminine</span> grounds downward into embodiment.
                 </>
               )}
             </p>
