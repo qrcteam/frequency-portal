@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect } from 'react';
 import { useTuningStore } from '@/stores/tuningStore';
 import { NOTES, type Note } from '@/types';
 import Link from 'next/link';
+import { ShareButton } from '@/components/ui/ShareButton';
 
 export default function ResultsPage() {
   const { currentSession, resetSession } = useTuningStore();
@@ -170,6 +170,12 @@ export default function ResultsPage() {
                 />
               </svg>
             </Link>
+
+            <ShareButton
+              title="Frequency Activator | Quantum Reality Creators"
+              text="I just discovered my frequency across six notes of creation. Try it yourself!"
+              className="text-text-muted hover:text-text-secondary"
+            />
 
             <Link
               href="/"

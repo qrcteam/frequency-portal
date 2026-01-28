@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { NOTES, DOMAINS } from "@/types";
 import { UserMenu } from "@/components/auth";
+import { ShareButton } from "@/components/ui/ShareButton";
 
 export default function Home() {
   return (
@@ -624,9 +625,16 @@ export default function Home() {
                 Quantum Reality Creators
               </a>
             </div>
-            <p className="font-ui text-xs text-text-muted">
-              &copy; {new Date().getFullYear()} Oz & Mazix. All rights reserved.
-            </p>
+            <div className="flex items-center gap-6">
+              <ShareButton
+                title="Frequency Activator | Quantum Reality Creators"
+                text="Discover your frequency across six notes of creation. A transformational journey of self-recognition."
+                className="text-text-muted hover:text-text-secondary"
+              />
+              <p className="font-ui text-xs text-text-muted">
+                &copy; {new Date().getFullYear()} Oz & Mazix
+              </p>
+            </div>
           </div>
         </footer>
       </main>
