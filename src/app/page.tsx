@@ -18,6 +18,12 @@ export default function Home() {
           <div className="flex items-center gap-6">
             <UserMenu />
             <Link
+              href="/merkaba"
+              className="font-ui text-sm text-text-secondary hover:text-text-primary transition-colors"
+            >
+              Merkaba
+            </Link>
+            <Link
               href="/tune"
               className="font-ui text-sm text-text-secondary hover:text-text-primary transition-colors"
             >
