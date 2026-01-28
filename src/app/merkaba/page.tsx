@@ -91,13 +91,13 @@ export default function MerkabaPage() {
 
   // Calculate positions based on mode
   const getMasculineOffset = () => {
-    if (triadMode === 'split') return -25
+    if (triadMode === 'split') return -38
     if (triadMode === 'feminine') return -100
     return 0
   }
 
   const getFeminineOffset = () => {
-    if (triadMode === 'split') return 25
+    if (triadMode === 'split') return 38
     if (triadMode === 'masculine') return 100
     return 0
   }
@@ -395,7 +395,7 @@ export default function MerkabaPage() {
               )
             })}
 
-            {/* Center Content */}
+            {/* Center Content - Unified */}
             {triadMode === 'unified' && (
               <button
                 onClick={() => setModalContent(getContent('center'))}
@@ -416,6 +416,31 @@ export default function MerkabaPage() {
                   {theme === 'presence' ? 'Identity · Attention' : 'Hypnosis'}
                 </div>
               </button>
+            )}
+
+            {/* Center Labels - Split View */}
+            {triadMode === 'split' && (
+              <>
+                {/* Masculine Label */}
+                <div
+                  className="absolute top-1/2 -translate-y-1/2 text-center z-10 transition-all duration-700"
+                  style={{ left: `${50 - 38}%`, transform: 'translate(-50%, -50%)' }}
+                >
+                  <div className="font-display text-xl sm:text-2xl text-heat-high tracking-widest uppercase">
+                    Masculine
+                  </div>
+                </div>
+
+                {/* Feminine Label */}
+                <div
+                  className="absolute top-1/2 -translate-y-1/2 text-center z-10 transition-all duration-700"
+                  style={{ left: `${50 + 38}%`, transform: 'translate(-50%, -50%)' }}
+                >
+                  <div className="font-display text-xl sm:text-2xl text-safety-high tracking-widest uppercase">
+                    Feminine
+                  </div>
+                </div>
+              </>
             )}
           </div>
 
