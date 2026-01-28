@@ -295,7 +295,10 @@ export default function MerkabaPage() {
           >
             {/* Background word */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-              <span className="font-ui text-[8rem] sm:text-[12rem] font-semibold uppercase tracking-[0.3em] text-white/5">
+              <span
+                className="font-ui text-[8rem] sm:text-[12rem] font-semibold uppercase tracking-[0.3em] text-white/5"
+                style={{ marginLeft: '0.3em' }}
+              >
                 {theme === 'presence' ? 'love' : 'fear'}
               </span>
             </div>
